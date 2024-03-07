@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+
+/* whole background */
+body {
+    background-color: rgb(236, 217, 217);
+    margin: 0;
+    padding: 0;
+}
+
+/* position navigation bar */
+.headerroom {
+    display: flex;
+    background-color: #eccacc;
+    width: 100%;
+    /* position: absolute; */
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+.headerroom img {
+    padding: 20px 20px 20px 60px;
+    width: 150px;
+}
+
+/* nak bagi melintang - content bar */
+.headerroom ul {
+    display: flex;
+    padding-right: 50px;
+}
+
+/* tak nak ada point */
+.headerroom ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+/* tulisan header */
+.headerroom ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* bagi putih bila tunjuk */
+.headerroom ul li a:hover {
+    background-color: #453D4A;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* title */
+/* h1 */
+.listroomstitle {
+    text-align: center;
+}
+
+.listroomstitle h1 {
+    padding-bottom: 5px;
+    font-size: 3em;
+    color: black;
+    font-family: 'Gabriela', serif;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    background-color: #eccacc;
+    width: 370px;
+    border-radius: 10px;
+}
+
+/* content ( all room ) */
+.lisroomcontainer
+{
+    padding-left: 450px;
+    padding-right: 450px;
+}
+
+/* --- */
+/* content - room 1 */
+.lisroomcontainer1,
+.lisroomcontainer2,
+.lisroomcontainer3,
+.lisroomcontainer4,
+.lisroomcontainer5,
+.lisroomcontainer6
+{
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+.listroomimage
+{
+    width: 300px;
+    border-radius: 10px;
+}
+
+.room1,
+.room2,
+.room3,
+.room4,
+.room5,
+.room6
+{
+    padding-top: 0px;
+    padding-left: 40px;
+}
+
+.room1 h3,
+.room2 h3,
+.room3 h3,
+.room4 h3,
+.room5 h3,
+.room6 h3
+{
+    font-family: 'Gabriela', serif;
+    font-size: 2em;
+}
+
+.room1 p,
+.room2 p,
+.room3 p,
+.room4 p,
+.room5 p,
+.room6 p
+{
+    font-size: 1.3em;
+}
+
+.room1 a,
+.room2 a,
+.room3 a,
+.room4 a,
+.room5 a,
+.room6 a
+{
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #FFF;
+    color: rgb(47, 47, 47);
+    transition: 0.3s;
+    margin-top: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.room1 a:hover,
+.room2 a:hover,
+.room3 a:hover,
+.room4 a:hover,
+.room5 a:hover,
+.room6 a:hover
+{
+    background-color: #453D4A;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+/* footer */
+section {
+    padding: 80px 15% 70px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    gap: 3.5rem;
+    background: #411900;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+span {
+    color: rgb(160, 113, 113);
+}
+
+.footer-content li {
+    margin-bottom: 16px;
+}
+
+.footer-content li a {
+    display: block;
+    color: #d6d6d6;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all .40s ease;
+}
+
+.footer-content li a:hover {
+    transform: translateY(-3px) translateX(-5px);
+    color: white;
+}
+
+.footer-content p {
+    color: #d6d6d6;
+    font: 16px;
+    line-height: 30px;
+    margin: 20px 0;
+}
+
+.icon {
+    text-align: end;
+}
+
+.icon a {
+    display: inline-block;
+    font-size: 25px;
+    color: rgb(236, 217, 217);
+    margin-right: 20px;
+    transition: all .40s ease;
+}
+
+.icon a:hover {
+    color: white;
+    transform: translateY(-5px);
+}
+
+.footername {
+    font-family: 'Gabriela', serif;
+    font-size: 20px;
+    color: white;
+}

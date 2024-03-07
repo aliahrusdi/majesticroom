@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+
+*{
+    box-sizing: unset;
+}
+
+/* whole background */
+body {
+    background-color: rgb(236, 217, 217);
+    margin: 0;
+    padding: 0;
+}
+
+/* position navigation bar */
+.headerroom {
+    display: flex;
+    background-color: #eccacc;
+    width: 100%;
+    position: absolute;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+.headerroom img {
+    padding: 20px 20px 20px 60px;
+    width: 150px;
+}
+
+/* nak bagi melintang - content bar */
+.headerroom ul {
+    display: flex;
+    padding-right: 50px;
+}
+
+/* tak nak ada point */
+.headerroom ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+/* tulisan header */
+.headerroom ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* bagi putih bila tunjuk */
+.headerroom ul li a:hover {
+    background-color: #453D4A;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* introduction */
+.intro {
+    background-color: #eccacc;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 40px;
+    padding-left: 40px;
+    width: 850px;
+}
+
+.introouter {
+    padding-top: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.intro h2 {
+    padding-bottom: 10px;
+    font-size: 3em;
+    color: black;
+    font-family: 'Gabriela', serif;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: black;
+}
+
+.intro a {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #FFF;
+    color: rgb(47, 47, 47);
+    transition: 0.3s;
+    margin-top: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.intro a:hover {
+    background-color: #453D4A;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+/* image for intro */
+.imgsquare {
+    background: url('../image/withfuturehusband.jpeg') 60% 40% no-repeat;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 7px solid #eccacc;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.imageintroouter {
+    padding-top: 150px;
+}
+
+/* list room */
+.listcategoryroomouter {
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+.listcategoryroom {
+    background-color: #eccacc;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.listcategoryroom h2 {
+    padding-bottom: 10px;
+    font-size: 3em;
+    color: black;
+    font-family: 'Gabriela', serif;
+    text-align: center;
+}
+
+.listcategoryroom table tr td {
+    min-width: 100px;
+    vertical-align: baseline;
+}
+
+.listcategoryroom img {
+    width: 250px;
+}
+
+.listcategoryroom td {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.listcategoryroom h4 {
+    font-size: 22px;
+    font-family: 'Gabriela', serif;
+}
+
+.listcategoryroom a {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #FFF;
+    color: rgb(47, 47, 47);
+    transition: 0.3s;
+    margin-top: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.listcategoryroom a:hover {
+    background-color: #453D4A;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+/* slogan */
+.slogan {
+    max-width: 700px;
+    background-color: #eccacc;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    margin: auto;
+    padding: 40px;
+    /* padding-left: 40px; */
+    width: 600px;
+}
+
+.sloganouter {
+    padding-top: 150px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.slogan h2 {
+    padding-bottom: 10px;
+    font-size: 3em;
+    color: black;
+    font-family: 'Gabriela', serif;
+    text-align: center;
+}
+
+/* button book now */
+.booknowbuttoncontainer {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.booknowbutton {
+    background-color: #eccacc;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    border-radius: 9px;
+    font-family: 'Gabriela', serif;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* footer */
+section 
+{
+    padding: 80px 15% 70px;
+}
+
+.footer 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    gap: 3.5rem;
+    background: #411900;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.logo
+ {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+span 
+{
+    color: rgb(160, 113, 113);
+}
+
+.footer-content li 
+{
+    margin-bottom: 16px;
+}
+
+.footer-content li a 
+{
+    display: block;
+    color: #d6d6d6;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all .40s ease;
+}
+
+.footer-content li a:hover
+{
+    transform: translateY(-3px) translateX(-5px);
+    color: white;
+}
+
+.footer-content p 
+{
+    color: #d6d6d6;
+    font: 16px;
+    line-height: 30px;
+    margin: 20px 0;
+}
+
+.icon
+{
+    text-align: end;
+}
+
+.icon a
+{
+    display: inline-block;
+    font-size: 25px;
+    color: rgb(236, 217, 217);
+    margin-right: 20px;
+    transition: all .40s ease;
+}
+
+.icon a:hover 
+{
+    color: white;
+    transform: translateY(-5px);
+}
+
+.footername
+{
+    font-family: 'Gabriela', serif;
+    font-size: 20px;
+    color: white;
+}
