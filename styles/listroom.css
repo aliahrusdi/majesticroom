@@ -93,10 +93,18 @@ body {
     padding-bottom: 80px;
 }
 
+.eachroom {
+    background-color: #d6d6d6;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .listroomimage
 {
-    width: 300px;
+    width: 100%;
+    height: 300px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .room1,
