@@ -22,6 +22,7 @@
             <img src="image/roomlogo.png">
         </div>
         <ul>
+            <li><a href="landingpage.html">Home</a></li>
             <li><a href="aboutus.html">About Us</a></li>
             <li><a href="signup.html">Sign Up</a></li>
             <li><a href="login.html">Login</a></li>
