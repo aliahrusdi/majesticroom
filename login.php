@@ -67,7 +67,7 @@ if (
                 </div>
     
                 <!-- not register yet -->
-                <p>Not Registered ? <a href="signup.html" class="create">Create an account</a></p>
+                <p>Not Registered ? <a href="signup.php" class="create">Create an account</a></p>
             </div>
         </form>
     </div>

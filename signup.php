@@ -77,7 +77,7 @@ if (
                 </div>
 
                 <!-- member -->
-                <p>Already a member ? <a href="login.html" class="login">Log in</a></p>
+                <p>Already a member ? <a href="login.php" class="login">Log in</a></p>
             </div>
         </form>
     </div>
@@ -87,11 +87,11 @@ if (
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Sign up error</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Sign Up error</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Error to sign up, please try again
+                    Error to Sign Up. Please try again
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
