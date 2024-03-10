@@ -16,7 +16,7 @@ body {
   background: #ebcecd;
 }
 
-.container {
+.containerlogin {
   padding: 40px;
   border-radius: 20px;
   /* border: 8px solid #223243; */
@@ -24,7 +24,7 @@ body {
   background-color: #411900;
 }
 
-.container .form {
+.containerlogin .form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,27 +32,27 @@ body {
   gap: 25px;
 }
 
-.container .form.signin,
-.container.signinForm .form.signup {
+.containerlogin .form.signin,
+.containerlogin.signinForm .form.signup {
   display: none;
 }
 
-.container.signinForm .form.signin {
+.containerlogin.signinForm .form.signin {
   display: flex;
 }
 
-.container .form h2 {
+.containerlogin .form h2 {
   color: #fff;
   font-weight: 500;
   letter-spacing: 0.1em;
 }
 
-.container .form .inputBox {
+.containerlogin .form .inputBox {
   position: relative;
   width: 300px;
 }
 
-.container .form .inputBox input {
+.containerlogin .form .inputBox input {
   padding: 12px 10px 12px 48px;
   border: none;
   width: 100%;
@@ -68,7 +68,7 @@ body {
   outline: none;
 }
 
-.container .form .inputBox span {
+.containerlogin .form .inputBox span {
   position: absolute;
   left: 0;
   padding: 12px 10px 12px 48px;
@@ -80,8 +80,8 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.container .form .inputBox input:valid~span,
-.container .form .inputBox input:focus~span {
+.containerlogin .form .inputBox input:valid~span,
+.containerlogin .form .inputBox input:focus~span {
   color: #C69A90;
   border: 1px solid #C69A90;
   background: #223243;
@@ -92,12 +92,12 @@ body {
   letter-spacing: 0.1em;
 }
 
-.container .form .inputBox input:valid,
-.container .form .inputBox input:focus {
+.containerlogin .form .inputBox input:valid,
+.containerlogin .form .inputBox input:focus {
   border: 1px solid #C69A90;
 }
 
-.container .form .inputBox i {
+.containerlogin .form .inputBox i {
   position: absolute;
   top: 15px;
   left: 16px;
@@ -108,7 +108,7 @@ body {
   border-right: 1px solid black;
 }
 
-.container .form .inputBox input[type="submit"] {
+.containerlogin .form .inputBox input[type="submit"] {
   background: #C69A90;
   color: black;
   padding: 10px 0;
@@ -120,13 +120,13 @@ body {
     inset 5px 5px 15px rgba(0, 0, 0, 0.35);
 }
 
-.container .form p {
+.containerlogin .form p {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.75em;
   font-weight: 300;
 }
 
-.container .form p a {
+.containerlogin .form p a {
   font-weight: 500;
   color: #fff;
 }

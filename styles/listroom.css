@@ -81,22 +81,17 @@ body {
 }
 
 /* --- */
-/* content - room 1 */
-.lisroomcontainer1,
-.lisroomcontainer2,
-.lisroomcontainer3,
-.lisroomcontainer4,
-.lisroomcontainer5,
-.lisroomcontainer6
-{
-    padding-top: 20px;
-    padding-bottom: 80px;
-}
 
 .eachroom {
-    background-color: #d6d6d6;
+    background-color: #eccacc;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: 10px;
+}
+
+.eachroom h3 {
+    font-family: 'Gabriela', serif;
+    
 }
 
 .listroomimage
@@ -107,45 +102,7 @@ body {
     object-fit: cover;
 }
 
-.room1,
-.room2,
-.room3,
-.room4,
-.room5,
-.room6
-{
-    padding-top: 0px;
-    padding-left: 40px;
-}
-
-.room1 h3,
-.room2 h3,
-.room3 h3,
-.room4 h3,
-.room5 h3,
-.room6 h3
-{
-    font-family: 'Gabriela', serif;
-    font-size: 2em;
-}
-
-.room1 p,
-.room2 p,
-.room3 p,
-.room4 p,
-.room5 p,
-.room6 p
-{
-    font-size: 1.3em;
-}
-
-.room1 a,
-.room2 a,
-.room3 a,
-.room4 a,
-.room5 a,
-.room6 a
-{
+.eachroom a {
     display: inline-block;
     padding: 10px 30px;
     background-color: #FFF;
@@ -157,20 +114,14 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1em;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    text-align: right;
 }
 
-.room1 a:hover,
-.room2 a:hover,
-.room3 a:hover,
-.room4 a:hover,
-.room5 a:hover,
-.room6 a:hover
-{
+.eachroom a:hover {
     background-color: #453D4A;
     color: rgb(255, 255, 255);
     transition: 0.3s;
 }
+
 
 /* footer */
 section {

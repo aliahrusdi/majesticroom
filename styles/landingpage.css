@@ -70,7 +70,7 @@ body {
     border-left: 1px solid rgba(255, 255, 255, 0.25);
     padding: 40px;
     padding-left: 40px;
-    width: 850px;
+    width: 650px;
 }
 
 .introouter {
@@ -132,6 +132,7 @@ body {
 }
 
 .listcategoryroom {
+    color: black;
     background-color: #eccacc;
     width: 100%;
     border-radius: 20px;
@@ -199,6 +200,7 @@ body {
     padding: 40px;
     /* padding-left: 40px; */
     width: 600px;
+    color: black;
 }
 
 .sloganouter {
