@@ -59,6 +59,11 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+.userprofile
+{
+    color: rgb(160, 113, 113) !important;
+}
+
 /* title */
 /* h1 */
 .aboutustitle {

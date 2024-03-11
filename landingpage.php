@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -23,10 +27,18 @@
             <img src="image/roomlogo.png">
         </div>
         <ul>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="signup.php">Sign Up</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</a></li>
+            <li><a href="aboutus.php">About Us</a></li>
+            <?php
+            if (!isset($_SESSION['userName'])) 
+            {
+            ?>
+                <li><a href="signup.php">Sign Up</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</a></li>
+            <?php }
+            else{ ?>
+            <li><a href="listrooms.php" >Book Now</a></li>
+            <?php } ?>
         </ul>
     </div>
 
@@ -185,7 +197,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a class="btn btn-primary" href="signup.html">Sign Up</a>
+                    <a class="btn btn-primary" href="signup.php">Sign Up</a>
                 </div>
             </div>
         </div>

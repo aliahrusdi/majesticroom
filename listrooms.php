@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,11 +26,19 @@
             <img src="image/roomlogo.png">
         </div>
         <ul>
-            <li><a href="landingpage.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="listrooms.html">Book Now</a></li>
+            <li><a href="landingpage.php">Home</a></li>
+            <li><a href="aboutus.php">About Us</a></li>
+            <?php
+            if (!isset($_SESSION['userName'])) 
+            {
+                ?>
+            <li><a href="signup.php">Sign Up</a></li>
+            <li><a href="login.php">Login</a></li>
+            <?php }
+            else{ ?>
+            <li><a href="logout.php">Log Out</a></li>
+            <li><a class="userprofile" href="profile.php"><?php echo $_SESSION['userName'] ?></a></li>
+            <?php } ?>
         </ul>
     </div>
 

@@ -1,5 +1,6 @@
 <?php
 require 'conn.php';
+session_start();
 
 if (
     isset($_POST['username']) &&
@@ -9,6 +10,7 @@ if (
         $result = mysqli_query($connect, "SELECT `userID`, `userName`, `userEmail`, `userPassword` 
         FROM `user` WHERE `userName` = '".$_POST['username']."' AND `userPassword` = '".$_POST['password']."'");
         if(mysqli_num_rows($result) == 1){
+            $_SESSION['userName'] = $_POST['username'];
             header('location: listrooms.php');
         }else{
             header('location: login.php?error');
