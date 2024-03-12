@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+/* postion for the box */
 * 
 {
   margin: 0;
@@ -8,6 +9,7 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* whole backgroud */
 body 
 {
   display: flex;
@@ -17,6 +19,7 @@ body
   background: #ebcecd;
 }
 
+/* container - box */
 .containersignup 
 {
   padding: 40px;

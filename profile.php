@@ -1,8 +1,15 @@
 <?php
+// to connect to server
 require "conn.php";
+
+// save data temporary
+// all variable $_SESSION can be used
 session_start();
 
+// run the coomand
 $result = mysqli_query($connect, "SELECT `userEmail` FROM `user` WHERE `userName` = '" .$_SESSION['userName']."'");
+
+// display name that same as the email - login
 $dataprofile = mysqli_fetch_array($result);
 $useremail = $dataprofile[0];
 ?>
@@ -36,9 +43,11 @@ $useremail = $dataprofile[0];
             <?php
             if (!isset($_SESSION['userName'])) {
             ?>
+            <!-- if user did not sign up -->
                 <li><a href="signup.php">Sign Up</a></li>
                 <li><a href="login.php">Login</a></li>
             <?php } else { ?>
+                <!-- if user already login - display their name -->
                 <li><a href="logout.php">Log Out</a></li>
                 <li><a class="userprofile" href="profile.php"><?php echo $_SESSION['userName'] ?></a></li>
             <?php } ?>
@@ -66,6 +75,7 @@ $useremail = $dataprofile[0];
                 </tr>
             </thead>
             <tbody>
+                <!-- display user info -->
                 <tr class="table-primary">
                     <td>User Name</td>
                     <td><?php echo $_SESSION['userName'] ?></td>

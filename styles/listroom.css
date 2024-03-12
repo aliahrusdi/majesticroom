@@ -90,8 +90,7 @@ body {
     padding-right: 450px;
 }
 
-/* --- */
-
+/* for all room */
 .eachroom {
     background-color: #eccacc;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -99,12 +98,14 @@ body {
     border-radius: 10px;
 }
 
+/* room font */
 .eachroom h3 {
     padding-top: 10px;
     font-family: 'Gabriela', serif;
     
 }
 
+/* room image */
 .listroomimage
 {
     width: 100%;
@@ -113,6 +114,7 @@ body {
     object-fit: cover;
 }
 
+/* room button */
 .eachroom a {
     display: inline-block;
     padding: 10px 30px;

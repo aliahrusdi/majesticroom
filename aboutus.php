@@ -1,4 +1,6 @@
 <?php
+// save data temporary
+// all variable $_SESSION can be used
 session_start();
 ?>
 
@@ -31,11 +33,17 @@ session_start();
             if (!isset($_SESSION['userName'])) 
             {
             ?>
+
+            <!-- if user did not sign up -->
                 <li><a href="signup.php">Sign Up</a></li>
                 <li><a href="login.php">Login</a></li>
+
+                <!-- pop up to sign up -->
                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</a></li>
             <?php }
             else{ ?>
+
+            <!-- if user already sign up -->
             <li><a href="listrooms.php" >Book Now</a></li>
             <?php } ?>
         </ul>
@@ -44,6 +52,7 @@ session_start();
     <br>
     <br>
     <br>
+    
     <!-- content / brief introduction -->
     <div class="aboutustitle">
         <h1>ABOUT US</h1>
@@ -51,6 +60,8 @@ session_start();
 
     <br>
     <br>
+
+    <!-- image -->
     <div class="aboutusimage">
         <img src="image/intro.jpeg">
     </div>
@@ -58,6 +69,8 @@ session_start();
     <br>
     <br>
     <br>
+
+    <!-- content -->
     <div class="aboutuscontent">
         <p>This online room booking project features a variety of room types displayed in a <br>
             neatly organized design. Users can easily navigate through visually appealing boxes, <br>
@@ -81,7 +94,7 @@ session_start();
         </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Modal for user to sign up first -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

@@ -1,18 +1,30 @@
 <?php
+// to connect to server
 require 'conn.php';
+
+// save data temporary
 session_start();
 
+// requirement for login
 if (
     isset($_POST['username']) &&
     isset($_POST['password'])
 ) {
     try {
+
+        // run the command
         $result = mysqli_query($connect, "SELECT `userID`, `userName`, `userEmail`, `userPassword` 
         FROM `user` WHERE `userName` = '".$_POST['username']."' AND `userPassword` = '".$_POST['password']."'");
         if(mysqli_num_rows($result) == 1){
+
+            // if success - name will display at header
             $_SESSION['userName'] = $_POST['username'];
+
+            // go to listroom page
             header('location: listrooms.php');
         }else{
+
+            // if not - error
             header('location: login.php?error');
         }
     } catch (Exception $e) {
@@ -91,6 +103,7 @@ if (
             </div>
         </div>
     </div>
+
     <!-- Modal Login Error -->
     <div class="modal fade" id="loginerrormodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -113,6 +126,8 @@ if (
     if (isset($_GET['success'])) {
 
     ?>
+
+    <!-- js for sign up succes -->
         <script>
             const successsignupmodal = new bootstrap.Modal(document.getElementById('successsignupmodal'));
             successsignupmodal.show();
@@ -124,6 +139,8 @@ if (
     if (isset($_GET['error'])) {
 
     ?>
+
+    <!-- js for sign up error -->
         <script>
             const loginerrormodal = new bootstrap.Modal(document.getElementById('loginerrormodal'));
             loginerrormodal.show();

@@ -1,4 +1,6 @@
 <?php
+// save data temporary
+// all variable $_SESSION can be used
 session_start();
 ?>
 
@@ -32,11 +34,17 @@ session_start();
             if (!isset($_SESSION['userName'])) 
             {
             ?>
+
+            <!-- if user did not sign up -->
                 <li><a href="signup.php">Sign Up</a></li>
                 <li><a href="login.php">Login</a></li>
+
+                <!-- pop up to sign up -->
                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</a></li>
             <?php }
             else{ ?>
+
+            <!-- if user already sign up -->
             <li><a href="listrooms.php" >Book Now</a></li>
             <?php } ?>
         </ul>
@@ -185,7 +193,7 @@ session_start();
         </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Modal to sign up first -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -194,7 +202,7 @@ session_start();
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    please sign up first before proceed to book.
+                    Please sign up first before proceed to book.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

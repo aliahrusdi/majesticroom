@@ -1,6 +1,8 @@
 <?php
+// to connect to server
 require 'conn.php';
 
+// requirement in signing up
 if (
     isset($_POST['username']) &&
     isset($_POST['emailaddress']) &&
@@ -8,11 +10,17 @@ if (
     isset($_POST['confirmpassword'])
 ) {
     try {
+
+        // run the command
         $result = mysqli_query($connect, "INSERT INTO `user`(`userID`, `userName`, `userEmail`, `userPassword`) 
         VALUES (NULL,'" . $_POST['username'] . "','" . $_POST['emailaddress'] . "','" . $_POST['password'] . "')");
+
+        // url display - success
         header('location: login.php?success');
     } catch (Exception $e) {
-        header('location: signup.php?error');
+
+        // url display - error
+        header('location: signup.php?error&errmsg=' . mysqli_error($connect));
     }
     //SAMA DENGAN location.href='login.php?success';
 }
@@ -91,7 +99,12 @@ if (
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Error to Sign Up. Please try again
+
+                    <!-- error message -->
+                    Error to Sign Up: <?php if(isset($_GET['errmsg']))
+                    {
+                        echo $_GET['errmsg'];
+                    } ?>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -118,10 +131,13 @@ if (
         </div>
     </div>
 
+    <!-- js for botstrap -->
     <?php
     if (isset($_GET['error'])) {
 
     ?>
+
+    <!-- js for error message -->
         <script>
             const modalerror = new bootstrap.Modal(document.getElementById('signuperrormodal'));
             modalerror.show();
@@ -130,6 +146,7 @@ if (
     }
     ?>
 
+    <!-- js for not same password -->
     <script>
         function checksamepass() {
             var password = document.getElementById('password').value;

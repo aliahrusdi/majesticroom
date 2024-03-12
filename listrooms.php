@@ -1,4 +1,9 @@
 <?php
+// to connect to server
+require "conn.php";
+
+// save data temporary
+// all variable $_SESSION can be used
 session_start();
 ?>
 
@@ -31,9 +36,11 @@ session_start();
             <?php
             if (!isset($_SESSION['userName'])) {
             ?>
+            <!-- if user did not sign up or login -->
                 <li><a href="signup.php">Sign Up</a></li>
                 <li><a href="login.php">Login</a></li>
             <?php } else { ?>
+                <!-- if user login -->
                 <li><a href="logout.php">Log Out</a></li>
                 <li><a class="userprofile" href="profile.php"><?php echo $_SESSION['userName'] ?></a></li>
             <?php } ?>
@@ -48,83 +55,50 @@ session_start();
 
     <br><br><br><br>
     <div class="container">
-        <!-- room 1 -->
-        <div onclick="location.href='room1.html'" class="row eachroom">
-            <div class="col">
-                <img class="listroomimage" src="image/standard-1.jpeg">
-            </div>
-            <div class="col">
-                <h3>STANDARD ROOM</h3>
-                <p>a room with two double beds <br>
-                    or with a queen bed</p>
-                <a href="room1.html">Explore</a>
-            </div>
-        </div>
+        <?php
 
-        <!-- room 2 -->
-        <br><br>
-        <div onclick="location.href='room2.html'" class="row eachroom">
-            <div class="col">
-                <h3>QUEEN ROOM</h3>
-                <p>a room that has a queen size bed</p>
-                <a href="room2.html">Explore</a>
-            </div>
-            <div class="col">
-                <img class="listroomimage" src="image/queen-1.jpeg">
-            </div>
-        </div>
+        // run command
+        $result = mysqli_query($connect, "SELECT `roomID`, `roomName`, `roomSize`, `roomDetails`, 
+        `roomPrice`, `roomAvailable`, `image1`, `image2`, `image3`, `image4` 
+        FROM `room`");
 
-        <!-- room 3 -->
-        <br><br>
-        <div onclick="location.href='room3.html'" class="row eachroom">
-            <div class="col">
-                <img class="listroomimage" src="image/connecting-1.jpeg">
-            </div>
-            <div class="col">
-                <h3>CONNECTING ROOM</h3>
-                <p>two rooms that connected</p>
-                <a href="room3.html">Explore</a>
-            </div>
-        </div>
-
-        <!-- room 4 -->
-        <br><br>
-        <div onclick="location.href='room4.html'" class="row eachroom">
-            <div class="col">
-                <h3>STUDIO ROOM</h3>
-                <p>a rooms duplicate of small house</p>
-                <a href="room4.html">Explore</a>
-            </div>
-            <div class="col">
-                <img class="listroomimage" src="image/studio-1.jpeg">
-            </div>
-        </div>
-
-        <!-- room 5 -->
-        <br><br>
-        <div onclick="location.href='room5.html'" class="row eachroom">
-            <div class="col">
-                <img class="listroomimage" src="image/cabana-1.jpeg">
-            </div>
-            <div class="col">
-                <h3>CABANA ROOM</h3>
-                <p>a room that feels like in jungle</p>
-                <a href="room5.html">Explore</a>
-            </div>
-        </div>
-
-        <!-- room 6 -->
-        <br><br>
-        <div onclick="location.href='room6.html'" class="row eachroom">
-            <div class="col">
-                <h3>DUPLEX ROOM</h3>
-                <p>a two-level room</p>
-                <a href="room6.html">Explore</a>
-            </div>
-            <div class="col">
-                <img class="listroomimage" src="image/duplex-1.jpeg">
-            </div>
-        </div>
+        // list room - display
+        $invert = false;
+        while ($row = mysqli_fetch_array($result)) {
+            if (!$invert) {
+        ?>
+                <!-- room 1 / 3 / 5 -->
+                <br><br>
+                <div class="row eachroom">
+                    <div class="col">
+                        <img class="listroomimage" src="image/<?php echo $row['image1'] ?>">
+                    </div>
+                    <div class="col">
+                        <h3><?php echo strtoupper($row['roomName']) ?></h3>
+                        <p><?php echo $row['roomDetails'] ?></p>
+                        <a href="roomdetail.php?id=<?php echo $row['roomID'] ?>">Explore</a>
+                    </div>
+                </div>
+            <?php
+                $invert = true;
+            } else {
+            ?>
+                <!-- room 2 / 4 / 6 -->
+                <br><br>
+                <div class="row eachroom">
+                    <div class="col">
+                        <h3><?php echo strtoupper($row['roomName']) ?></h3>
+                        <p><?php echo $row['roomDetails'] ?></p>
+                        <a href="roomdetail.php?id=<?php echo $row['roomID'] ?>">Explore</a>
+                    </div>
+                    <div class="col">
+                        <img class="listroomimage" src="image/<?php echo $row['image1'] ?>">
+                    </div>
+                </div>
+        <?php
+        $invert = false;
+            }
+        } ?>
     </div>
 
     <br><br><br><br>
