@@ -29,15 +29,13 @@ session_start();
             <li><a href="landingpage.php">Home</a></li>
             <li><a href="aboutus.php">About Us</a></li>
             <?php
-            if (!isset($_SESSION['userName'])) 
-            {
-                ?>
-            <li><a href="signup.php">Sign Up</a></li>
-            <li><a href="login.php">Login</a></li>
-            <?php }
-            else{ ?>
-            <li><a href="logout.php">Log Out</a></li>
-            <li><a class="userprofile" href="profile.php"><?php echo $_SESSION['userName'] ?></a></li>
+            if (!isset($_SESSION['userName'])) {
+            ?>
+                <li><a href="signup.php">Sign Up</a></li>
+                <li><a href="login.php">Login</a></li>
+            <?php } else { ?>
+                <li><a href="logout.php">Log Out</a></li>
+                <li><a class="userprofile" href="profile.php"><?php echo $_SESSION['userName'] ?></a></li>
             <?php } ?>
         </ul>
     </div>
@@ -50,36 +48,81 @@ session_start();
 
     <br><br><br><br>
     <div class="container">
-        <div class="row eachroom">
+        <!-- room 1 -->
+        <div onclick="location.href='room1.html'" class="row eachroom">
             <div class="col">
-                <img class="listroomimage" src="image/roomlogo.png">
+                <img class="listroomimage" src="image/standard-1.jpeg">
             </div>
             <div class="col">
-                <h3>ROOM 1</h3>
-                <p>brief intro about room</p>
+                <h3>STANDARD ROOM</h3>
+                <p>a room with two double beds <br>
+                    or with a queen bed</p>
                 <a href="room1.html">Explore</a>
             </div>
         </div>
+
+        <!-- room 2 -->
         <br><br>
-        <div class="row eachroom">
+        <div onclick="location.href='room2.html'" class="row eachroom">
             <div class="col">
-                <h3>ROOM 1</h3>
-                <p>brief intro about room</p>
-                <a href="room1.html">Explore</a>
+                <h3>QUEEN ROOM</h3>
+                <p>a room that has a queen size bed</p>
+                <a href="room2.html">Explore</a>
             </div>
             <div class="col">
-                <img class="listroomimage" src="image/roomlogo.png">
+                <img class="listroomimage" src="image/queen-1.jpeg">
             </div>
         </div>
+
+        <!-- room 3 -->
         <br><br>
-        <div class="row eachroom">
+        <div onclick="location.href='room3.html'" class="row eachroom">
             <div class="col">
-                <img class="listroomimage" src="image/roomlogo.png">
+                <img class="listroomimage" src="image/connecting-1.jpeg">
             </div>
             <div class="col">
-                <h3>ROOM 1</h3>
-                <p>brief intro about room</p>
-                <a href="room1.html">Explore</a>
+                <h3>CONNECTING ROOM</h3>
+                <p>two rooms that connected</p>
+                <a href="room3.html">Explore</a>
+            </div>
+        </div>
+
+        <!-- room 4 -->
+        <br><br>
+        <div onclick="location.href='room4.html'" class="row eachroom">
+            <div class="col">
+                <h3>STUDIO ROOM</h3>
+                <p>a rooms duplicate of small house</p>
+                <a href="room4.html">Explore</a>
+            </div>
+            <div class="col">
+                <img class="listroomimage" src="image/studio-1.jpeg">
+            </div>
+        </div>
+
+        <!-- room 5 -->
+        <br><br>
+        <div onclick="location.href='room5.html'" class="row eachroom">
+            <div class="col">
+                <img class="listroomimage" src="image/cabana-1.jpeg">
+            </div>
+            <div class="col">
+                <h3>CABANA ROOM</h3>
+                <p>a room that feels like in jungle</p>
+                <a href="room5.html">Explore</a>
+            </div>
+        </div>
+
+        <!-- room 6 -->
+        <br><br>
+        <div onclick="location.href='room6.html'" class="row eachroom">
+            <div class="col">
+                <h3>DUPLEX ROOM</h3>
+                <p>a two-level room</p>
+                <a href="room6.html">Explore</a>
+            </div>
+            <div class="col">
+                <img class="listroomimage" src="image/duplex-1.jpeg">
             </div>
         </div>
     </div>

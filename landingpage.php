@@ -47,8 +47,8 @@ session_start();
         <div class="introouter">
             <div class="intro">
                 <h2>INTRODUCTION</h2>
-                <p>brief about the website</p>
-                <a href="aboutus.html">Explore</a>
+                <p><i>Welcome to Majestic Room by <strong>aliahrusdi</strong></i></p>
+                <a href="aboutus.php">Explore</a>
             </div>
         </div>
 
@@ -66,47 +66,48 @@ session_start();
     <br>
     <div class="listcategoryroomouter">
         <div class="listcategoryroom">
-            <h2>LIST ROOM</h2>
+            <h2><u>LIST ROOM</u></h2>
             <table align="center">
                 <!-- row 1 -->
                 <tr>
                     <!-- room 1 -->
                     <td>
-                        <img src="image/roomlogo.png"><br>
-                        <h4>ROOM 1</h4>
-                        <p>description of room 1</p>
+                        <img src="image/standard-1.jpeg"><br>
+                        <h4>STANDARD ROOM</h4>
+                        <p>a room with two double beds <br>
+                        or with a queen bed</p>
                     </td>
 
                     <!-- room 2 -->
                     <td>
-                        <img src="image/roomlogo.png"><br>
-                        <h4>ROOM 2</h4>
-                        <p>description of room 2</p>
+                        <img src="image/queen-1.jpeg"><br>
+                        <h4>QUEEN ROOM</h4>
+                        <p>a room that has a queen size bed</p>
                     </td>
 
                     <!-- room 3 -->
                     <td>
-                        <img src="image/roomlogo.png"><br>
-                        <h4>ROOM 3</h4>
-                        <p>description of room 3</p>
+                        <img src="image/connecting-1.jpeg"><br>
+                        <h4>CONNECTING ROOM</h4>
+                        <p>two rooms that connected</p>
                     </td>
                 </tr>
                 <tr>
                     <!-- room 4 -->
                     <td>
-                        <a href="room 4">Explore</a>
+                        <a href="room 1">Explore</a>
                         <br><br><br>
                     </td>
 
                     <!-- room 5 -->
                     <td>
-                        <a href="room 5">Explore</a>
+                        <a href="room 2">Explore</a>
                         <br><br><br>
                     </td>
 
                     <!-- room 6 -->
                     <td>
-                        <a href="room 6">Explore</a>
+                        <a href="room 3">Explore</a>
                         <br><br><br>
                     </td>
                 </tr>
@@ -115,23 +116,23 @@ session_start();
                 <tr>
                     <!-- room 4 -->
                     <td>
-                        <img src="image/roomlogo.png"><br>
-                        <h4>ROOM 4</h4>
-                        <p>description of room 4</p>
+                        <img src="image/studio-1.jpeg"><br>
+                        <h4>STUDIO ROOM</h4>
+                        <p>a rooms duplicate of small house</p>
                     </td>
 
                     <!-- room 5 -->
                     <td>
-                        <img src="image/roomlogo.png"><br>
-                        <h4>ROOM 5</h4>
-                        <p>description of room 5</p>
+                        <img src="image/cabana-1.jpeg"><br>
+                        <h4>CABANA ROOM</h4>
+                        <p>a room that feels like in jungle</p>
                     </td>
 
                     <!-- room 6 -->
                     <td>
-                        <img src="image/roomlogo.png"><br>
-                        <h4>ROOM 6</h4>
-                        <p>description of room 6 <br>sdshdsjdh <br>edhjhdhsjdh <br>kdjshdjhjh</p>
+                        <img src="image/duplex-1.jpeg"><br>
+                        <h4>DUPLEX ROOM</h4>
+                        <p>a two-level room</p>
                     </td>
                 </tr>
                 <tr>
@@ -161,13 +162,13 @@ session_start();
     <div class="sloganouter">
         <div class="slogan">
             <h2>OUR SLOGAN</h2>
-            <p>- the slogan -</p>
+            <p class="text-center"><i>WE MAKE YOU FEEL LIKE HOME</i></p>
         </div>
     </div>
 
     <!-- book now button -->
     <div class="booknowbuttoncontainer">
-        <a class="booknowbutton" href="listroom.php" onclick="alert('You need to sign up first')">BOOK NOW</a>
+        <a class="booknowbutton" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK NOW</a>
     </div>
 
     <!-- footer -->

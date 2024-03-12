@@ -26,18 +26,17 @@ session_start();
             <img src="image/roomlogo.png">
         </div>
         <ul>
-            <li><a href="landingpage.php">Home</a></li>
-            <li><a href="aboutus.php">About Us</a></li>
+        <li><a href="landingpage.php">Home</a></li>
             <?php
             if (!isset($_SESSION['userName'])) 
             {
-                ?>
-            <li><a href="signup.php">Sign Up</a></li>
-            <li><a href="login.php">Login</a></li>
+            ?>
+                <li><a href="signup.php">Sign Up</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</a></li>
             <?php }
             else{ ?>
-            <li><a href="logout.php">Log Out</a></li>
-            <li><a class="userprofile" href="profile.php"><?php echo $_SESSION['userName'] ?></a></li>
+            <li><a href="listrooms.php" >Book Now</a></li>
             <?php } ?>
         </ul>
     </div>
@@ -53,27 +52,32 @@ session_start();
     <br>
     <br>
     <div class="aboutusimage">
-        <img src="image/roomlogo.png">
+        <img src="image/intro.jpeg">
     </div>
 
     <br>
     <br>
     <br>
     <div class="aboutuscontent">
-        <p>tulis tulis tulis <br><br><br><br><br><br></p>
+        <p>This online room booking project features a variety of room types displayed in a <br>
+            neatly organized design. Users can easily navigate through visually appealing boxes, <br>
+            each presenting clear pictures and concise descriptions. The user-friendly interface <br>
+            includes intuitive buttons for seamless interaction, and accessible forms enhance the <br>
+            overall booking experience. The emphasis is on simplicity and organization to <br>
+            provide users with a straightforward and enjoyable room booking process</p>
     </div>
-    
+
     <!-- footer -->
     <section class="footer">
         <div class="footercontent">
             <div class="logo">aliah<span>rusdi</span></div>
             <p class="footername">Majestic Room</p>
-            
+
             <div class="icon">
                 <a href="#"><i class='bx bxl-tiktok'></i></a>
                 <a href="#"><i class='bx bxl-instagram-alt'></i></a>
                 <a href="#"><i class='bx bxl-twitter'></i></a>
-            </div>    
+            </div>
         </div>
     </section>
 
