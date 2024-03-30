@@ -71,7 +71,7 @@ session_start();
                 <br><br>
                 <div class="row eachroom">
                     <div class="col">
-                        <img class="listroomimage" src="image/<?php echo $row['image1'] ?>">
+                        <img class="listroomimage" src="image/<?php echo $row['roomID'] ?>/<?php echo $row['image1'] ?>">
                     </div>
                     <div class="col">
                         <h3><?php echo strtoupper($row['roomName']) ?></h3>
@@ -92,7 +92,7 @@ session_start();
                         <a href="roomdetail.php?id=<?php echo $row['roomID'] ?>">Explore</a>
                     </div>
                     <div class="col">
-                        <img class="listroomimage" src="image/<?php echo $row['image1'] ?>">
+                        <img class="listroomimage" src="image/<?php echo $row['roomID'] ?>/<?php echo $row['image1'] ?>">
                     </div>
                 </div>
         <?php

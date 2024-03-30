@@ -6,12 +6,11 @@ require "conn.php";
 // all variable $_SESSION can be used
 session_start();
 
-if(!isset($_SESSION['userName']))
-{
+if (!isset($_SESSION['userName'])) {
     header("location:signup.php");
 }
 
-if (!isset($_GET['id'])){
+if (!isset($_GET['id'])) {
     echo "this page is accessed in error";
     die();
 }
@@ -20,7 +19,7 @@ if (!isset($_GET['id'])){
 $result = mysqli_query($connect, "SELECT `roomID`, `roomName`, `roomSize`, `roomDetails`, 
 `roomPrice`, `roomAvailable`, `image1`, `image2`, `image3`, `image4` 
 FROM `room`
-WHERE `roomID` = '".$_GET['id']."'");
+WHERE `roomID` = '" . $_GET['id'] . "'");
 
 $row = mysqli_fetch_array($result);
 ?>
@@ -72,14 +71,14 @@ $row = mysqli_fetch_array($result);
             <div class="product__photo">
                 <div class="photo-container">
                     <div class="photo-main">
-                        <img id="selectroomimage"  class="roomimages" src="image/<?php echo $row['image1'] ?>">
+                        <img id="selectroomimage" class="roomimages" src="image/<?php echo $_GET['id'] ?>/<?php echo $row['image1'] ?>">
                     </div>
                     <div class="photo-album">
                         <ul>
-                            <li><img class="roomimages" onclick="selectimage('<?php echo $row['image1'] ?>')" src="image/<?php echo $row['image1'] ?>"></li>
-                            <li><img class="roomimages" onclick="selectimage('<?php echo $row['image2'] ?>')" src="image/<?php echo $row['image2'] ?>"></li>
-                            <li><img class="roomimages" onclick="selectimage('<?php echo $row['image3'] ?>')" src="image/<?php echo $row['image3'] ?>"></li>
-                            <li><img class="roomimages" onclick="selectimage('<?php echo $row['image4'] ?>')" src="image/<?php echo $row['image4'] ?>"></li>
+                            <li><img class="roomimages" onclick="selectimage('<?php echo $row['image1'] ?>', <?php echo $_GET['id'] ?>)" src="image/<?php echo $_GET['id'] ?>/<?php echo $row['image1'] ?>"></li>
+                            <li><img class="roomimages" onclick="selectimage('<?php echo $row['image2'] ?>', <?php echo $_GET['id'] ?>)" src="image/<?php echo $_GET['id'] ?>/<?php echo $row['image2'] ?>"></li>
+                            <li><img class="roomimages" onclick="selectimage('<?php echo $row['image3'] ?>', <?php echo $_GET['id'] ?>)" src="image/<?php echo $_GET['id'] ?>/<?php echo $row['image3'] ?>"></li>
+                            <li><img class="roomimages" onclick="selectimage('<?php echo $row['image4'] ?>', <?php echo $_GET['id'] ?>)" src="image/<?php echo $_GET['id'] ?>/<?php echo $row['image4'] ?>"></li>
                         </ul>
                     </div>
                 </div>
@@ -95,24 +94,21 @@ $row = mysqli_fetch_array($result);
                     <h3 class="roomnametitle">ABOUT THIS ROOM</h3>
                     <ul>
                         <li>&nbsp;Details : <br>
-                        <?php echo $row['roomDetails'] ?></li>
+                            <?php echo $row['roomDetails'] ?></li>
                         <li>&nbsp;Size : <br>
-                        <?php echo $row['roomSize'] ?> sq</li>
+                            <?php echo $row['roomSize'] ?> sq</li>
                         <li>&nbsp;Availability : <strong><?php echo strtoupper($row['roomAvailable']) ?></strong></li>
                     </ul>
                 </div>
 
                 <?php
-                if($row['roomAvailable'] == 'yes')
-                {
-                ?>  
-                <button onclick="window.location='order.php?id=<?php echo $_GET['id'] ?>'" class="buy--btn" >BOOK NOW</button>
-                <?php }
-                else
-                {
-                    ?>
+                if ($row['roomAvailable'] == 'yes') {
+                ?>
+                    <button onclick="window.location='order.php?id=<?php echo $_GET['id'] ?>'" class="buy--btn">BOOK NOW</button>
+                <?php } else {
+                ?>
                     <button onclick="window.location='order.php?id=<?php echo $_GET['id'] ?>'" class="buy--btn" disabled>NOT AVAILABLE</button>
-                    <?php
+                <?php
                 } ?>
             </div>
         </section>
@@ -134,10 +130,9 @@ $row = mysqli_fetch_array($result);
     </section>
 
     <script>
-        function selectimage(srcimage)
-        {
-            var path = "image/" + srcimage;
-            document.getElementById("selectroomimage").src=path;
+        function selectimage(srcimage, id) {
+            var path = "image/" + id + "/" + srcimage;
+            document.getElementById("selectroomimage").src = path;
         }
     </script>
 </body>
