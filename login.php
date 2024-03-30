@@ -43,7 +43,7 @@ if (
     <title>Login</title>
     <link rel="shortcut icon" href="image/tablogo.png" type="image/x-icon">
     <script src="js/jquery.js"></script>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="cssframework/majesticui.css">
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 
@@ -86,24 +86,6 @@ if (
         </form>
     </div>
 
-    <!-- Modal Success Signup -->
-    <div class="modal fade" id="successsignupmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Successfully Sign up</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    You are success to signup. Please log in
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal Login Error -->
     <div class="modal fade" id="loginerrormodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -122,19 +104,6 @@ if (
         </div>
     </div>
 
-    <?php
-    if (isset($_GET['success'])) {
-
-    ?>
-
-    <!-- js for sign up succes -->
-        <script>
-            const successsignupmodal = new bootstrap.Modal(document.getElementById('successsignupmodal'));
-            successsignupmodal.show();
-        </script>
-    <?php
-    }
-    ?>
     <?php
     if (isset($_GET['error'])) {
 

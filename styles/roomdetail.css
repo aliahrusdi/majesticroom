@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*
+{
+    box-sizing: unset;
+}
+
+/* whole background */
+body {
+    background-color: rgb(236, 217, 217);
+    margin: 0;
+    padding: 0;
+}
+
+/* position navigation bar */
+.headerroom {
+    display: flex;
+    background-color: #eccacc;
+    width: 100%;
+    /* position: absolute; */
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+.headerroom img {
+    padding: 20px 20px 20px 60px;
+    width: 150px;
+}
+
+/* nak bagi melintang - content bar */
+.headerroom ul {
+    display: flex;
+    padding-right: 50px;
+}
+
+/* tak nak ada point */
+.headerroom ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+/* tulisan header */
+.headerroom ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* bagi putih bila tunjuk */
+.headerroom ul li a:hover {
+    background-color: #453D4A;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* user name - font color */
+.userprofile
+{
+    color: rgb(160, 113, 113) !important;
+}
+
+
+/* START PRODUCT STYLE */
+/* ----- Variables ----- */
+/* ----- Global ----- */
+.productcontainer {
+	display: grid;
+	grid-template-rows: 1fr;
+	font-family: "Raleway", sans-serif;
+}
+.roomnametitle {
+	font-size: 0.7em;
+	letter-spacing: 1.2px;
+	color: #a6a6a6;
+	box-sizing: border-box;
+}
+.roomimages {
+	box-sizing: border-box;
+	max-width: 100%;
+	filter: drop-shadow(1px 1px 3px #a6a6a6);
+}
+/* ----- Product Section ----- */
+.product {
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: 0.9fr 1fr;
+	margin: auto;
+	padding: 2.5em 0;
+	min-width: 800px;
+	background-color: white;
+	border-radius: 5px;
+}
+/* ----- Photo Section ----- */
+.product__photo {
+	box-sizing: border-box;
+	position: relative;
+}
+.photo-container {
+	box-sizing: border-box;
+	position: absolute;
+	left: -2.5em;
+	display: grid;
+	grid-template-rows: 1fr;
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+	box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+}
+.photo-main {
+	box-sizing: border-box;
+	border-radius: 6px 6px 0 0;
+	background-color: #eccacc;
+}
+.photo-main .controls {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.8em;
+	color: #fff;
+}
+.photo-main .controls i {
+	cursor: pointer;
+}
+.photo-main img {
+	box-sizing: border-box;
+	object-fit: cover;
+	position: absolute;
+	left: -2.5em;
+	top: 2em;
+	width: 100%;
+	height: 300px;
+	filter: saturate(150%) contrast(120%) hue-rotate(10deg) drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
+}
+.photo-album {
+	box-sizing: border-box;
+	padding: 0.7em 1em;
+	border-radius: 0 0 6px 6px;
+	background-color: #fff;
+}
+
+.photo-album img
+{
+	width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.photo-album ul {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-around;
+	margin: 0;
+    padding: 0;
+}
+.photo-album li {
+	box-sizing: border-box;
+	float: left;
+	width: 55px;
+	height: 55px;
+	padding: 7px;
+	border: 1px solid #a6a6a6;
+	border-radius: 3px;
+	list-style-type: none;
+}
+/* ----- Informations Section ----- */
+.product__info {
+	box-sizing: border-box;
+	padding: 0.8em 0;
+}
+.title {
+	box-sizing: border-box;
+}
+.title h1 {
+	box-sizing: border-box;
+	margin-bottom: 0.1em;
+	color: #4c4c4c;
+    font-family: 'Gabriela', serif;
+	font-size: 1.5em;
+	font-weight: 900;
+}
+.title span {
+	box-sizing: border-box;
+	font-size: 0.7em;
+	color: #a6a6a6;
+}
+.price {
+	box-sizing: border-box;
+	margin: 1.5em 0;
+	color: #bd9295;
+	font-size: 1.2em;
+}
+.price span {
+	box-sizing: border-box;
+	padding-left: 0.15em;
+	font-size: 2.9em;
+}
+.variant {
+	box-sizing: border-box;
+	overflow: auto;
+}
+.variant h3 {
+	box-sizing: border-box;
+	margin-bottom: 1.1em;
+}
+.variant li {
+	box-sizing: border-box;
+	float: left;
+	width: 35px;
+	height: 35px;
+	padding: 3px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.variant li:first-child, .variant li:hover {
+	border: 1px solid #a6a6a6;
+}
+.variant li:not(:first-child) {
+	margin-left: 0.1em;
+}
+.description {
+	box-sizing: border-box;
+	clear: left;
+	margin: 2em 0;
+}
+.description h3 {
+	box-sizing: border-box;
+	margin-bottom: 1em;
+}
+.description ul {
+	box-sizing: border-box;
+	font-size: 0.8em;
+	list-style: disc;
+	margin-left: 1em;
+}
+.description li {
+	font-family: "Inter", sans-serif;
+	box-sizing: border-box;
+	text-indent: -0.6em;
+	margin-bottom: 0.5em;
+}
+.buy--btn {
+	box-sizing: border-box;
+	padding: 1.5em 3.1em;
+	border: none;
+	border-radius: 7px;
+	font-size: 0.8em;
+	font-weight: 700;
+	letter-spacing: 1.3px;
+	color: rgb(47, 47, 47);
+	background-color: #fababa;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.buy--btn:hover {
+	transform: scale(0.97);
+	background-color: #453D4A;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+/* footer */
+section 
+{
+    padding: 80px 15% 70px;
+}
+
+.footer 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    gap: 3.5rem;
+    background: #411900;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.logo
+ {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+span 
+{
+    color: rgb(160, 113, 113);
+}
+
+.footer-content li 
+{
+    margin-bottom: 16px;
+}
+
+.footer-content li a 
+{
+    display: block;
+    color: #d6d6d6;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all .40s ease;
+}
+
+.footer-content li a:hover
+{
+    transform: translateY(-3px) translateX(-5px);
+    color: white;
+}
+
+.footer-content p 
+{
+    color: #d6d6d6;
+    font: 16px;
+    line-height: 30px;
+    margin: 20px 0;
+}
+
+.icon
+{
+    text-align: end;
+}
+
+.icon a
+{
+    display: inline-block;
+    font-size: 25px;
+    color: rgb(236, 217, 217);
+    margin-right: 20px;
+    transition: all .40s ease;
+}
+
+.icon a:hover 
+{
+    color: white;
+    transform: translateY(-5px);
+}
+
+.footername
+{
+    font-family: 'Gabriela', serif;
+    font-size: 20px;
+    color: white;
+}

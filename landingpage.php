@@ -1,4 +1,7 @@
 <?php
+// to connect to server
+require "conn.php";
+
 // save data temporary
 // all variable $_SESSION can be used
 session_start();
@@ -12,7 +15,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Majestic Room</title>
     <script src="js/jquery.js"></script>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="cssframework/majesticui.css">
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles/landingpage.css">
     <link rel="shortcut icon" href="image/tablogo.png" type="image/x-icon">
@@ -31,21 +34,19 @@ session_start();
         <ul>
             <li><a href="aboutus.php">About Us</a></li>
             <?php
-            if (!isset($_SESSION['userName'])) 
-            {
+            if (!isset($_SESSION['userName'])) {
             ?>
 
-            <!-- if user did not sign up -->
+                <!-- if user did not sign up -->
                 <li><a href="signup.php">Sign Up</a></li>
                 <li><a href="login.php">Login</a></li>
 
                 <!-- pop up to sign up -->
                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</a></li>
-            <?php }
-            else{ ?>
+            <?php } else { ?>
 
-            <!-- if user already sign up -->
-            <li><a href="listrooms.php" >Book Now</a></li>
+                <!-- if user already sign up -->
+                <li><a href="listrooms.php">Book Now</a></li>
             <?php } ?>
         </ul>
     </div>
@@ -75,94 +76,55 @@ session_start();
     <div class="listcategoryroomouter">
         <div class="listcategoryroom">
             <h2><u>LIST ROOM</u></h2>
+            <?php
+
+            // run command
+            $result = mysqli_query($connect, "SELECT `roomID`, `roomName`, `roomSize`, `roomDetails`, 
+            `roomPrice`, `roomAvailable`, `image1`, `image2`, `image3`, `image4` 
+            FROM `room` 
+            LIMIT 3");
+            ?>
             <table align="center">
-                <!-- row 1 -->
+
+                <!-- display room -->
                 <tr>
-                    <!-- room 1 -->
-                    <td>
-                        <img src="image/standard-1.jpeg"><br>
-                        <h4>STANDARD ROOM</h4>
-                        <p>a room with two double beds <br>
-                        or with a queen bed</p>
-                    </td>
-
-                    <!-- room 2 -->
-                    <td>
-                        <img src="image/queen-1.jpeg"><br>
-                        <h4>QUEEN ROOM</h4>
-                        <p>a room that has a queen size bed</p>
-                    </td>
-
-                    <!-- room 3 -->
-                    <td>
-                        <img src="image/connecting-1.jpeg"><br>
-                        <h4>CONNECTING ROOM</h4>
-                        <p>two rooms that connected</p>
-                    </td>
-                </tr>
-                <tr>
-                    <!-- room 4 -->
-                    <td>
-                        <a href="room 1">Explore</a>
-                        <br><br><br>
-                    </td>
-
-                    <!-- room 5 -->
-                    <td>
-                        <a href="room 2">Explore</a>
-                        <br><br><br>
-                    </td>
-
-                    <!-- room 6 -->
-                    <td>
-                        <a href="room 3">Explore</a>
-                        <br><br><br>
-                    </td>
+                    <?php
+                    while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                        <td>
+                            <img src="image/<?php echo $row['roomID'] ?>/<?php echo $row['image1'] ?>"><br>
+                            <h4><?php echo strtoupper($row['roomName']) ?></h4>
+                            <p><?php echo $row['roomDetails'] ?></p>
+                        </td>
+                    <?php
+                    } ?>
                 </tr>
 
-                <!-- row 2 -->
+                <!-- button explore for each room -->
                 <tr>
-                    <!-- room 4 -->
-                    <td>
-                        <img src="image/studio-1.jpeg"><br>
-                        <h4>STUDIO ROOM</h4>
-                        <p>a rooms duplicate of small house</p>
-                    </td>
+                    <?php
 
-                    <!-- room 5 -->
-                    <td>
-                        <img src="image/cabana-1.jpeg"><br>
-                        <h4>CABANA ROOM</h4>
-                        <p>a room that feels like in jungle</p>
-                    </td>
+                    // run command
+                    $result = mysqli_query($connect, "SELECT `roomID`, `roomName`, `roomSize`, `roomDetails`, 
+                    `roomPrice`, `roomAvailable`, `image1`, `image2`, `image3`, `image4` 
+                    FROM `room` 
+                    LIMIT 3");
 
-                    <!-- room 6 -->
-                    <td>
-                        <img src="image/duplex-1.jpeg"><br>
-                        <h4>DUPLEX ROOM</h4>
-                        <p>a two-level room</p>
-                    </td>
-                </tr>
-                <tr>
-                    <!-- room 4 -->
-                    <td>
-                        <a href="room 4">Explore</a>
-                        <br><br><br>
-                    </td>
-
-                    <!-- room 5 -->
-                    <td>
-                        <a href="room 5">Explore</a>
-                        <br><br><br>
-                    </td>
-
-                    <!-- room 6 -->
-                    <td>
-                        <a href="room 6">Explore</a>
-                        <br><br><br>
-                    </td>
+                    while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                        <td>
+                            <a href="roomdetail.php?id=<?php echo $row['roomID'] ?>">Explore</a>
+                            <br><br><br>
+                        </td>
+                    <?php
+                    } ?>
                 </tr>
             </table>
+
+            <!-- button for explore more -->
+            <div class="exploremorebutton">
+                <a href="listrooms.php">EXPLORE MORE ROOM</a>
+            </div>
         </div>
     </div>
 

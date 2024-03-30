@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+
+*{
+    box-sizing: unset;
+}
+
+/* whole background */
+body {
+    background-color: rgb(236, 217, 217);
+    margin: 0;
+    padding: 0;
+}
+
+/* position navigation bar */
+.headerroom {
+    display: flex;
+    background-color: #eccacc;
+    width: 100%;
+    /* position: absolute; */
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+.headerroom img {
+    padding: 20px 20px 20px 60px;
+    width: 150px;
+}
+
+/* nak bagi melintang - content bar */
+.headerroom ul {
+    display: flex;
+    padding-right: 50px;
+}
+
+/* tak nak ada point */
+.headerroom ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+/* tulisan header */
+.headerroom ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* bagi putih bila tunjuk */
+.headerroom ul li a:hover {
+    background-color: #453D4A;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* userprofile - font color */
+.userprofile
+{
+    color: rgb(160, 113, 113) !important;
+}
+
+/* title */
+/* h1 */
+.menutitle {
+    text-align: center;
+}
+
+.menutitle h1 {
+    padding-bottom: 5px;
+    font-size: 3em;
+    color: black;
+    font-family: 'Gabriela', serif;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    background-color: #eccacc;
+    width: 370px;
+    border-radius: 10px;
+}
+
+/* box for menu */
+.boxmenu
+{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 3em;
+    color: black;
+    font-family: 'Gabriela', serif;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    background-color: #eccacc;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* explore more button */
+.boxmenu a,
+.addroombutton
+{
+    /* display: inline-block; */
+    padding: 10px 30px;
+    background-color: #FFF;
+    color: rgb(47, 47, 47);
+    transition: 0.3s;
+    margin-top: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.boxmenu a:hover,
+.addroombutton:hover
+{
+    background-color: #453D4A;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+/* image */
+.aboutusimage
+{
+    text-align: center;
+}
+
+.aboutusimage img
+{
+    width: 400px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    background-color: #eccacc;
+    border-radius: 10px;
+}
+
+/* room image */
+.listroomimage
+{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* footer */
+section {
+    padding: 80px 15% 70px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    gap: 3.5rem;
+    background: #411900;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+span {
+    color: rgb(160, 113, 113);
+}
+
+.footer-content li {
+    margin-bottom: 16px;
+}
+
+.footer-content li a {
+    display: block;
+    color: #d6d6d6;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all .40s ease;
+}
+
+.footer-content li a:hover {
+    transform: translateY(-3px) translateX(-5px);
+    color: white;
+}
+
+.footer-content p {
+    color: #d6d6d6;
+    font: 16px;
+    line-height: 30px;
+    margin: 20px 0;
+}
+
+.icon {
+    text-align: end;
+}
+
+.icon a {
+    display: inline-block;
+    font-size: 25px;
+    color: rgb(236, 217, 217);
+    margin-right: 20px;
+    transition: all .40s ease;
+}
+
+.icon a:hover {
+    color: white;
+    transform: translateY(-5px);
+}
+
+.footername {
+    font-family: 'Gabriela', serif;
+    font-size: 20px;
+    color: white;
+}

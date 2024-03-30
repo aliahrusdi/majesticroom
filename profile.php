@@ -7,7 +7,7 @@ require "conn.php";
 session_start();
 
 // run the coomand
-$result = mysqli_query($connect, "SELECT `userEmail` FROM `user` WHERE `userName` = '" .$_SESSION['userName']."'");
+$result = mysqli_query($connect, "SELECT `userEmail` FROM `user` WHERE `userName` = '" . $_SESSION['userName'] . "'");
 
 // display name that same as the email - login
 $dataprofile = mysqli_fetch_array($result);
@@ -22,7 +22,7 @@ $useremail = $dataprofile[0];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <script src="js/jquery.js"></script>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="cssframework/majesticui.css">
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles/aboutus.css">
     <link rel="shortcut icon" href="image/tablogo.png" type="image/x-icon">
@@ -43,11 +43,12 @@ $useremail = $dataprofile[0];
             <?php
             if (!isset($_SESSION['userName'])) {
             ?>
-            <!-- if user did not sign up -->
+                <!-- if user did not sign up -->
                 <li><a href="signup.php">Sign Up</a></li>
                 <li><a href="login.php">Login</a></li>
             <?php } else { ?>
                 <!-- if user already login - display their name -->
+                <li><a href="listrooms.php">Book Now</a></li>
                 <li><a href="logout.php">Log Out</a></li>
                 <li><a class="userprofile" href="profile.php"><?php echo $_SESSION['userName'] ?></a></li>
             <?php } ?>
@@ -68,7 +69,7 @@ $useremail = $dataprofile[0];
     <!-- USER INFORMATION -->
     <div class="container-sm">
         <!-- Content profile here -->
-        <table class="table">
+        <table class="table rounded-3 overflow-hidden">
             <thead class="table-secondary">
                 <tr>
                     <th class="text-center" colspan="2">User Profile</th>
@@ -88,7 +89,7 @@ $useremail = $dataprofile[0];
         </table>
 
         <!-- Content my order here -->
-        <table class="table table-striped">
+        <table class="table table-striped rounded-3 overflow-hidden">
             <thead>
                 <tr class="table-secondary">
                     <th class="text-center" colspan="4">My Order</th>
@@ -101,24 +102,26 @@ $useremail = $dataprofile[0];
                 </tr>
             </thead>
             <tbody class="table-primary">
+                <?php
+                $result2 = mysqli_query($connect, "SELECT `user`.`userName`, `user`.`userEmail`, 
+                `room`.`roomName`, `room`.`roomPrice`, 
+                `orders`.`checkIn`, `orders`.`checkOut`, `orders`.`totalPrice` 
+                FROM `orders` 
+                INNER JOIN `user` ON `orders`.`userName` = `user`.`userName`
+                INNER JOIN `room` ON `room`.`roomID` = `orders`.`roomID` 
+                WHERE `user`.`userName` = '".$_SESSION['userName']."'");
+
+                while($order = mysqli_fetch_array($result2))
+                {
+                ?>
                 <tr>
-                    <td>Name of room</td>
-                    <td>24-04-2023</td>
-                    <td>30-05-2024</td>
-                    <td>RM9000</td>
+                    <td><?php echo $order[2] ?></td>
+                    <td><?php echo $order[4] ?></td>
+                    <td><?php echo $order[5] ?></td>
+                    <td><?php echo $order[6] ?></td>
                 </tr>
-                <tr>
-                    <td>Name of room</td>
-                    <td>24-04-2023</td>
-                    <td>30-05-2024</td>
-                    <td>RM9000</td>
-                </tr>
-                <tr>
-                    <td>Name of room</td>
-                    <td>24-04-2023</td>
-                    <td>30-05-2024</td>
-                    <td>RM9000</td>
-                </tr>
+                <?php 
+                } ?>
             </tbody>
         </table>
     </div>

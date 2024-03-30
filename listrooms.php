@@ -15,7 +15,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Room</title>
     <script src="js/jquery.js"></script>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="cssframework/majesticui.css">
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles/listroom.css">
     <link rel="shortcut icon" href="image/tablogo.png" type="image/x-icon">
