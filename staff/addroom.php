@@ -46,7 +46,7 @@ session_start();
             <div class="product__photo">
                 <div class="photo-container">
                     <div class="photo-main">
-                        <img id="selectroomimage" class="roomimages" src="">
+                        <img id="selectroomimage" class="roomimages" src="../image/emptyimage.jpg">
                         <label for="imginput1" id="labelimg1" class="form-label" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Upload image 1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
                                 <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
@@ -74,10 +74,10 @@ session_start();
                     </div>
                     <div class="photo-album">
                         <ul>
-                            <li><img class="roomimages" id="1" onclick="selectimage(this.id)" src=""></li>
-                            <li><img class="roomimages" id="2" onclick="selectimage(this.id)" src=""></li>
-                            <li><img class="roomimages" id="3" onclick="selectimage(this.id)" src=""></li>
-                            <li><img class="roomimages" id="4" onclick="selectimage(this.id)" src=""></li>
+                            <li><img class="roomimages" id="1" onclick="selectimage(this.id)" src="../image/emptyimage.jpg"></li>
+                            <li><img class="roomimages" id="2" onclick="selectimage(this.id)" src="../image/emptyimage.jpg"></li>
+                            <li><img class="roomimages" id="3" onclick="selectimage(this.id)" src="../image/emptyimage.jpg"></li>
+                            <li><img class="roomimages" id="4" onclick="selectimage(this.id)" src="../image/emptyimage.jpg"></li>
                         </ul>
                     </div>
                 </div>
