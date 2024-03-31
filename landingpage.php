@@ -69,10 +69,7 @@ session_start();
     </div>
 
     <!-- list for category room -->
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br>
     <div class="listcategoryroomouter">
         <div class="listcategoryroom">
             <h2><u>LIST ROOM</u></h2>
@@ -138,7 +135,15 @@ session_start();
 
     <!-- book now button -->
     <div class="booknowbuttoncontainer">
-        <a class="booknowbutton" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK NOW</a>
+        <?php
+        if (!isset($_SESSION['userName'])) {
+        ?>
+            <a class="booknowbutton" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK NOW</a>
+        <?php } else { ?>
+            <a class="booknowbutton" href="listrooms.php">BOOK NOW</a>
+        <?php }
+        ?>
+
     </div>
 
     <!-- footer -->
@@ -148,9 +153,9 @@ session_start();
             <p class="footername">Majestic Room</p>
 
             <div class="icon">
-                <a href="#"><i class='bx bxl-tiktok'></i></a>
-                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.tiktok.com/en/"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.instagram.com/"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://twitter.com/?lang=en"><i class='bx bxl-twitter'></i></a>
             </div>
         </div>
     </section>
@@ -174,7 +179,5 @@ session_start();
         </div>
     </div>
 </body>
-
-</html>
 
 </html>

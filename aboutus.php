@@ -49,26 +49,21 @@ session_start();
         </ul>
     </div>
 
-    <br>
-    <br>
-    <br>
+    <br><br><br>
     
     <!-- content / brief introduction -->
     <div class="aboutustitle">
         <h1>ABOUT US</h1>
     </div>
 
-    <br>
-    <br>
+    <br><br>
 
     <!-- image -->
     <div class="aboutusimage">
         <img src="image/intro.jpeg">
     </div>
 
-    <br>
-    <br>
-    <br>
+    <br><br><br>
 
     <!-- content -->
     <div class="aboutuscontent">
@@ -87,9 +82,9 @@ session_start();
             <p class="footername">Majestic Room</p>
 
             <div class="icon">
-                <a href="#"><i class='bx bxl-tiktok'></i></a>
-                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.tiktok.com/en/"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.instagram.com/"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://twitter.com/?lang=en"><i class='bx bxl-twitter'></i></a>
             </div>
         </div>
     </section>
@@ -113,7 +108,5 @@ session_start();
         </div>
     </div>
 </body>
-
-</html>
 
 </html>

@@ -135,9 +135,9 @@ $row = mysqli_fetch_array($result);
             <p class="footername">Majestic Room</p>
 
             <div class="icon">
-                <a href="#"><i class='bx bxl-tiktok'></i></a>
-                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.tiktok.com/en/"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.instagram.com/"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://twitter.com/?lang=en"><i class='bx bxl-twitter'></i></a>
             </div>
         </div>
     </section>
@@ -167,6 +167,7 @@ $row = mysqli_fetch_array($result);
         var totalpricepost = null;
         var roomidpost     = "<?php echo $_GET['id'] ?>";
         
+        // display calendar
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -179,11 +180,15 @@ $row = mysqli_fetch_array($result);
                     const diffTime = Math.abs(date2 - date1);
                     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
+                    // tax
                     var tax = 0.06
 
+                    // total price
                     var totalprice = diffDays * <?php echo $row['roomPrice'] ?>;
 
                     totalpricepost = (totalprice * tax) + totalprice;
+
+                    // cara display tarikh
                     date1post = moment(date1).format("DD/MM/YYYY");
                     date2post = moment(date2).format("DD/MM/YYYY");
                     

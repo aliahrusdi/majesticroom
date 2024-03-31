@@ -22,9 +22,15 @@ $result =  mysqli_query($connect, "UPDATE `user` SET `userName`='".$_POST['custn
 WHERE `userID`='".$_POST['custid']."'");
 
 if ($result) {
+    // success
     $_SESSION['popuptoast'] = array("Update Customer", "Customer has been successfully updated");
+
+    // redirect
     header("location:listcust.php");
 } else {
+    // error
     $_SESSION['popuptoast'] = array("Update Customer", "Failed to update customer");
+
+    // redirect
     header("location:listcust.php");
 }

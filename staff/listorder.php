@@ -17,8 +17,8 @@ session_start();
     <link rel="stylesheet" href="../cssframework/majesticui.css">
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- icon link -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
     <link rel="stylesheet" href="styles/menu.css" />
 </head>
@@ -33,7 +33,7 @@ session_start();
             <!-- if user login -->
             <li><a href="menu.php">Menu</a></li>
             <li><a href="logout.php">Log Out</a></li>
-            <li><a class="userprofile" href="profile.php"><?php echo $_SESSION['staffUserName'] ?></a></li>
+            <li><a class="userprofile" href="#"><?php echo $_SESSION['staffUserName'] ?></a></li>
         </ul>
     </div>
 
@@ -44,7 +44,6 @@ session_start();
     </div>
 
     <br><br>
-
     <!-- content -->
     <div class="container">
         <table class="table table-striped rounded-3 overflow-hidden">
@@ -84,8 +83,11 @@ session_start();
                         <td><?php echo $order[5] ?></td>
                         <td>RM <?php echo $order[6] ?></td>
                         <td>
+                            <!-- edit button -->
                             <a class="btn btn-primary btn-sm" href="editorder.php?orderid=<?php echo $order[7] ?>">Edit</a>
                             <!-- <a class="btn btn-secondary btn-sm" onclick="return confirm('are you sure want to delete this customer ?')" href="deleteorder.php?orderid=<?php echo $order['orderID'] ?>">Delete</a> -->
+
+                            <!-- modal for delete -->
                             <a class="btn btn-secondary btn-sm" href="#" data-bs-toggle="modal" onclick="confirmDelete(<?php echo $order[7] ?>)" data-bs-target="#deletemodal">Delete</a>
                         </td>
                     </tr>
@@ -94,6 +96,7 @@ session_start();
             </tbody>
         </table>
     </div>
+
     <br><br><br><br><br><br><br>
     <!-- footer -->
     <section class="footer">
@@ -102,29 +105,36 @@ session_start();
             <p class="footername">Majestic Room</p>
 
             <div class="icon">
-                <a href="#"><i class='bx bxl-tiktok'></i></a>
-                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.tiktok.com/en/"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.instagram.com/"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://twitter.com/?lang=en"><i class='bx bxl-twitter'></i></a>
             </div>
         </div>
     </section>
 
     <?php
+    // toast popup
     if (isset($_SESSION['popuptoast'])) {
     ?>
         <div class="toast-container position-fixed bottom-0 end-0 p-3">
             <div id="successpopup" class="toast text-bg-primary" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header text-bg-secondary">
                     <img src="../image/tablogo.png" width="15px" class="rounded me-2">
+
+                    <!-- ikut array - updateorder.php (tajuk) -->
                     <strong class="me-auto"><?php echo $_SESSION['popuptoast'][0]; ?></strong>
                     <small>Now</small>
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
+
+                <!-- ikut array - updateroom.php (description) -->
                 <div class="toast-body">
                     <?php echo $_SESSION['popuptoast'][1]; ?>
                 </div>
             </div>
         </div>
+
+        <!-- toast - success -->
         <script>
             const successpopup = document.getElementById('successpopup');
             const toastsuccess = bootstrap.Toast.getOrCreateInstance(successpopup);
@@ -154,6 +164,7 @@ session_start();
         </div>
     </div>
 
+    <!-- set link in modal button -->
     <script>
         function confirmDelete(id) {
             var yesdelbtn = document.getElementById("deletemodalbutton");

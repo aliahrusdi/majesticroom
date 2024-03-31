@@ -23,9 +23,15 @@ $result =  mysqli_query($connect, "UPDATE `orders` SET `roomID`='".$_POST['roomi
 WHERE `ordersID`='".$_POST['orderid']."'");
 
 if ($result) {
+    // success
     $_SESSION['popuptoast'] = array("Update Order", "Customer order has been successfully updated");
+
+    // redirect
     header("location:listorder.php");
 } else {
+    // error
     $_SESSION['popuptoast'] = array("Update Order", "Failed to update customer order");
+
+    // redirect
     header("location:listorder.php");
 }

@@ -5,8 +5,7 @@ require '../conn.php';
 // save data temporary
 session_start();
 
-if(!isset($_GET['custid']))
-{
+if (!isset($_GET['custid'])) {
     echo "this page is accessed in error";
     die();
 }
@@ -23,8 +22,8 @@ if(!isset($_GET['custid']))
     <link rel="stylesheet" href="../cssframework/majesticui.css">
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- icon link -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
     <link rel="stylesheet" href="styles/menu.css" />
 </head>
@@ -39,18 +38,17 @@ if(!isset($_GET['custid']))
             <!-- if user login -->
             <li><a href="menu.php">Menu</a></li>
             <li><a href="logout.php">Log Out</a></li>
-            <li><a class="userprofile" href="profile.php"><?php echo $_SESSION['staffUserName'] ?></a></li>
+            <li><a class="userprofile" href="#"><?php echo $_SESSION['staffUserName'] ?></a></li>
         </ul>
     </div>
 
     <br><br><br>
     <!-- title -->
     <div class="menutitle">
-        <h1>EDIT</h1>
+        <h1>EDIT CUSTOMER</h1>
     </div>
 
     <br><br>
-    
     <!-- content -->
     <div class="container">
         <form action="updatecust.php" method="post">
@@ -66,15 +64,16 @@ if(!isset($_GET['custid']))
                 </thead>
                 <tbody>
                     <?php
-        
+
                     // run command
-                    $listcustresult = mysqli_query($connect, "SELECT `userID`, `userName`, `userEmail`, `userPassword` FROM `user` WHERE `userID` = '".$_GET['custid']."'");
-        
+                    $listcustresult = mysqli_query($connect, "SELECT `userID`, `userName`, `userEmail`, `userPassword` FROM `user` WHERE `userID` = '" . $_GET['custid'] . "'");
+
                     $no = 1;
                     while ($customer = mysqli_fetch_array($listcustresult)) {
-        
+
                     ?>
                         <tr>
+                            <!-- display teble -->
                             <td><?php echo $no++ ?></td>
                             <td><input type="hidden" name="custid" value="<?php echo $customer['userID']  ?>"><input type="text" value="<?php echo $customer['userName'] ?>" name="custname"></td>
                             <td><input type="text" value="<?php echo $customer['userEmail'] ?>" name="custemail"></td>
@@ -98,9 +97,9 @@ if(!isset($_GET['custid']))
             <p class="footername">Majestic Room</p>
 
             <div class="icon">
-                <a href="#"><i class='bx bxl-tiktok'></i></a>
-                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.tiktok.com/en/"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.instagram.com/"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://twitter.com/?lang=en"><i class='bx bxl-twitter'></i></a>
             </div>
         </div>
     </section>

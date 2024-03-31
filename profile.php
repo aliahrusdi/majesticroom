@@ -55,16 +55,13 @@ $useremail = $dataprofile[0];
         </ul>
     </div>
 
-    <br>
-    <br>
-    <br>
+    <br><br><br>
     <!-- content / brief introduction -->
     <div class="aboutustitle">
         <h1>USER PROFILE</h1>
     </div>
 
-    <br>
-    <br>
+    <br><br>
 
     <!-- USER INFORMATION -->
     <div class="container-sm">
@@ -134,9 +131,9 @@ $useremail = $dataprofile[0];
             <p class="footername">Majestic Room</p>
 
             <div class="icon">
-                <a href="#"><i class='bx bxl-tiktok'></i></a>
-                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.tiktok.com/en/"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.instagram.com/"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://twitter.com/?lang=en"><i class='bx bxl-twitter'></i></a>
             </div>
         </div>
     </section>

@@ -114,9 +114,13 @@ if ($result) {
 
     // kalau success
     $_SESSION['popuptoast'] = array("Update Room", "Room has been successfully updated");
+
+    // redirect
     header("location:listroom.php?roomid=" . $_POST['roomid']);
 } else {
     // kalau error
     $_SESSION['popuptoast'] = array("Update Room", "Failed to update romm");
+
+    // redirect
     header("location:listroom.php?roomid=" . $_POST['roomid'] . "&error");
 }

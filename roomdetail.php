@@ -74,6 +74,7 @@ $row = mysqli_fetch_array($result);
                         <img id="selectroomimage" class="roomimages" src="image/<?php echo $_GET['id'] ?>/<?php echo $row['image1'] ?>">
                     </div>
                     <div class="photo-album">
+                        <!-- gambar nak tekan tekan -->
                         <ul>
                             <li><img class="roomimages" onclick="selectimage('<?php echo $row['image1'] ?>', <?php echo $_GET['id'] ?>)" src="image/<?php echo $_GET['id'] ?>/<?php echo $row['image1'] ?>"></li>
                             <li><img class="roomimages" onclick="selectimage('<?php echo $row['image2'] ?>', <?php echo $_GET['id'] ?>)" src="image/<?php echo $_GET['id'] ?>/<?php echo $row['image2'] ?>"></li>
@@ -104,9 +105,11 @@ $row = mysqli_fetch_array($result);
                 <?php
                 if ($row['roomAvailable'] == 'yes') {
                 ?>
+                <!-- kalau room tu available -->
                     <button onclick="window.location='order.php?id=<?php echo $_GET['id'] ?>'" class="buy--btn">BOOK NOW</button>
                 <?php } else {
                 ?>
+                <!-- kalau room tu tak available -->
                     <button onclick="window.location='order.php?id=<?php echo $_GET['id'] ?>'" class="buy--btn" disabled>NOT AVAILABLE</button>
                 <?php
                 } ?>
@@ -122,13 +125,14 @@ $row = mysqli_fetch_array($result);
             <p class="footername">Majestic Room</p>
 
             <div class="icon">
-                <a href="#"><i class='bx bxl-tiktok'></i></a>
-                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.tiktok.com/en/"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.instagram.com/"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://twitter.com/?lang=en"><i class='bx bxl-twitter'></i></a>
             </div>
         </div>
     </section>
 
+    <!-- js untuk gambar tekan tekan -->
     <script>
         function selectimage(srcimage, id) {
             var path = "image/" + id + "/" + srcimage;
