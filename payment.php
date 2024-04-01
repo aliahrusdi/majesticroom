@@ -138,7 +138,7 @@ $useremail = $dataprofile[0];
                         </tr>
                         <tr style="display: none;" id="cashamountrow">
                             <td>Enter Amount</td>
-                            <td>RM <input id="cashinput" type="number" value="0" name="cashvalue" required></td>
+                            <td>RM <input id="cashinput" type="number" value="0" name="cashvalue" step="0.01" required></td>
                         </tr>
                     </tbody>
                 </table>

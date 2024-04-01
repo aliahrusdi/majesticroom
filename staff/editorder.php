@@ -84,8 +84,15 @@ if (!isset($_GET['orderid'])) {
                     while ($order = mysqli_fetch_array($listorderresult)) {
                         // fetch data to table
                         // convert tarikh
-                        $checkindateobj = DateTime::createFromFormat('d/m/Y', $order[4]);
-                        $checkoutdateobj = DateTime::createFromFormat('d/m/Y', $order[5]);
+                        try {
+                            $checkindateobj = DateTime::createFromFormat('d/m/Y', $order[4]);
+                            $checkoutdateobj = DateTime::createFromFormat('d/m/Y', $order[5]);
+                            $newcheckindate = $checkindateobj->format('Y-m-d');
+                            $newcheckoutdate = $checkoutdateobj->format('Y-m-d');
+                        } catch (\Throwable $th) {
+                            $newcheckindate = '';
+                            $newcheckoutdate = '';
+                        }
 
                         // run command
                         $roomresult = mysqli_query($connect, "SELECT `roomID`, `roomName`, `roomPrice` FROM `room`");
@@ -100,7 +107,7 @@ if (!isset($_GET['orderid'])) {
                             <td><?php echo $order[1] ?></td>
                             <td>
                                 <!-- select room name -->
-                                <select name="roomid" id="" onchange="setroomprice(this.value)">
+                                <select name="roomid" id="" onchange="setroomprice(this.value)" required>
                                     <?php
                                     while ($room = mysqli_fetch_array($roomresult)) {
                                     ?>
@@ -113,8 +120,8 @@ if (!isset($_GET['orderid'])) {
                                 </select>
                             </td>
                             <!-- tukar tarikh checkin / checkout -->
-                            <td><input type="date" onclick="editprice()" onchange="editprice()" value="<?php echo $checkindateobj->format('Y-m-d'); ?>" name="checkin" id="checkindate"></td>
-                            <td><input type="date" onclick="editprice()" onchange="editprice()" value="<?php echo $checkoutdateobj->format('Y-m-d'); ?>" name="checkout" id="checkoutdate"></td>
+                            <td><input type="date" onclick="editprice()" onchange="editprice()" value="<?php echo $newcheckindate ?>" name="checkin" id="checkindate" required></td>
+                            <td><input type="date" onclick="editprice()" onchange="editprice()" value="<?php echo $newcheckoutdate ?>" name="checkout" id="checkoutdate" required></td>
 
                             <!-- total price - kalau tukar (auto) -->
                             <td id="pricedisplay">RM <?php echo $order[6] ?></td>

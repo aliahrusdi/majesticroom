@@ -1,5 +1,10 @@
 <?php
-require "../conn.php";
+// to connect to server
+require '../conn.php';
+
+// save data temporary
+session_start();
+
 function uploadFileToFolder($image, $roomid, $roomimgnumber)
 {
     // path

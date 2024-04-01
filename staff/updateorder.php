@@ -17,10 +17,16 @@ if (
     die();
 }
 
+//Convert date format from yyyy-mm-dd to dd/mm/yyyy
+$checkindateobj  = DateTime::createFromFormat('Y-m-d', $_POST['checkin']);
+$checkoutdateobj = DateTime::createFromFormat('Y-m-d', $_POST['checkout']);
+$newcheckindate  = $checkindateobj->format('d/m/Y');
+$newcheckoutdate = $checkoutdateobj->format('d/m/Y');
+
 // run command
-$result =  mysqli_query($connect, "UPDATE `orders` SET `roomID`='".$_POST['roomid']."',
-`checkIn`='".$_POST['checkin']."',`checkOut`='".$_POST['checkout']."',`totalPrice`='".$_POST['totalpriceinput']."' 
-WHERE `ordersID`='".$_POST['orderid']."'");
+$result =  mysqli_query($connect, "UPDATE `orders` SET `roomID`='" . $_POST['roomid'] . "',
+`checkIn`='" . $newcheckindate . "',`checkOut`='" . $newcheckoutdate . "',`totalPrice`='" . $_POST['totalpriceinput'] . "' 
+WHERE `ordersID`='" . $_POST['orderid'] . "'");
 
 if ($result) {
     // success
