@@ -47,13 +47,16 @@ session_start();
     <!-- content -->
     <div class="container">
 
+        <!-- search room -->
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="search room">
+
         <!-- button add room -->
         <div>
             <a href="addroom.php" class="addroombutton float-end">Add Room</a>
         </div>
 
         <br><br><br>
-        <table class="table table-striped rounded-3 overflow-hidden">
+        <table id="tablecust" class="table table-striped rounded-3 overflow-hidden">
             <thead>
                 <tr class="table-secondary">
                     <th>NO.</th>
@@ -214,6 +217,31 @@ session_start();
         function confirmDelete(id) {
             var yesdelbtn = document.getElementById("deletemodalbutton");
             yesdelbtn.setAttribute("href", "deleteroom.php?roomid=" + id);
+        }
+    </script>
+
+    <!-- js for cust search -->
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tablecust");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
         }
     </script>
 </body>
